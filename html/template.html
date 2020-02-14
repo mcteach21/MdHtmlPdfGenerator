@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/style-blog.css" />
+      <link rel="stylesheet" href="assets/css/codehilite.css" />
+      <link rel="stylesheet" href="assets/css/monokai.theme.css" />
+
+    <style>
+        h2{
+            font-size: 1.6em;
+        }
+        h3{
+            font-size: 1.4em;
+        }
+        h2,h3{
+            color : #17a2b8;
+            font-weight: bolder;
+        }
+        img {
+            max-width: 90%;
+        }
+        #night-mode{
+             position: fixed; top:10px; right:20px;
+             z-index: 100;
+        }
+
+    </style>
+    <script src="https://kit.fontawesome.com/7f0b5f1f38.js" crossorigin="anonymous"></script>
+    <title>${title}</title>
+</head>
+<body>
+    <a href="#" id="night-mode"><i class="fas fa-moon"></i></a>
+    <div class="main">
+          <nav class="left-nav">
+            <div class="nav-left-content">
+              <div class="nav-top-left">
+                <h4>
+                  <a href="#" class="icon icon-home">${doc_title}</a>
+                </h4>
+              </div>
+              <div class="nav-second-left">
+                 ${nav_section}
+              </div>
+            </div>
+          </nav>
+          <section class="main-section">
+              <nav class="main-section-top" role="navigation" aria-label="top navigation">
+                <a href="#">${doc_title}</a>
+                <button class="navbar-toggler" style="float:right;margin-right:20px;" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="color:white"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav-mob">
+                         ${nav_section}
+                    </div>
+                 </div>
+              </nav>
+              <div class="main-section-content">
+                  <div class="rst-content">
+                    <div role="navigation" aria-label="breadcrumbs navigation">
+                      <ul class="wy-breadcrumbs">
+                        <li><a href="index.html">Index</a> <i class="fas fa-angle-double-right"></i></li>
+                        <li>${doc_title}</li>
+                        <li class="wy-breadcrumbs-aside">
+                          <a href="${github_url}"><i class="fab fa-github-square"></i> Edit on GitHub</a>
+                        </li>
+                      </ul>
+                      <hr>
+                    </div>
+                  </div>
+
+                  <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                      <div itemprop="articleBody">
+                          ${content}
+                      </div>
+                    <div class="articleComments">
+<!--                        <div class="note">-->
+<!--                          <p class="note-title">Note</p>-->
+<!--                          <p class="last">If you are using IronPython, use <code class="docutils literal"><span class="pre">IRONPYTHONPATH</span></code> instead of-->
+<!--                          <code class="docutils literal"><span class="pre">PYTHONPATH</span></code>.</p>-->
+<!--                        </div>-->
+                    </div>
+                  </div>
+                  <footer>
+                    <div id="id-current" style="display: none;"></div>
+                    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+                      <a href="#" class="btn btn-neutral float-right" title="next" accesskey="n" rel="next"><span class="fa fa-arrow-circle-right"></span></a>
+                      <a href="#" class="btn btn-neutral" title="previous" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span></a>
+                    </div>
+                    <hr>
+                    <div role="contentinfo"><p><i class="far fa-copyright"></i> Copyright 2019, MC. </p></div>
+                  </footer>
+                </div>
+      </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(function(){
+          $(".toctree-l1>a").click(function(){
+                var id = $(this).attr('href');
+                $('.article').removeClass('active');
+                $(id).addClass('active').fadeOut(0).fadeIn(1000);
+          });
+          $('blockquote>p').each(function(){
+               if($(this).text().startsWith('Positive')){
+                  $(this).parent().addClass( "special" );
+                  $(this).text($(this).text().substring(8));
+               }
+               if($(this).text().startsWith('Negative')){
+                  $(this).parent().addClass( "warning" );
+                  $(this).text($(this).text().substring(8));
+               }
+          });
+          $('#night-mode').click(function(e){
+               e.preventDefault();
+
+               if($('#night').length){
+                     $('#night').remove();
+                       $(this).html('<i class="fas fa-moon"></i>');
+               }else{
+                    $('head').append($('<link rel="stylesheet" id="night" type="text/css" />').attr('href', 'assets/css/night.mode.css'));
+                    $(this).html('<i class="fas fa-sun"></i>');
+               }
+          });
+
+          $('.navbar-nav-mob li').click(function(e){
+                $('#navbarNavAltMarkup').removeClass('show');
+          });
+
+
+        });
+    </script>
+
+</body>
+</html>

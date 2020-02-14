@@ -1,0 +1,15 @@
+.main-section-content {
+    background: transparent;
+    color: antiquewhite;
+}
+
+
+.codehilite pre {
+    background-color: #17202a;
+    padding: 0.5em;
+}
+
+code {
+    background-color: transparent;
+    color: white;
+}

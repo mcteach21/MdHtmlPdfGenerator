@@ -1,0 +1,9 @@
+.article {
+    display: block;
+}
+#night-mode{
+    display:none;
+}
+.wy-breadcrumbs, .rst-footer-buttons{
+   display:none;
+}
