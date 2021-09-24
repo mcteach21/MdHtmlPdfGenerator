@@ -13,7 +13,7 @@ from termcolor import colored
 from mako.template import Template
 from mysoup import MySoupParser
 
-menu_color = 'yellow'
+menu_color = 'white'
 
 generated_path = 'html\\'
 generated_html = ''
@@ -55,9 +55,11 @@ def generate_html_from_md():
         markdown_source_file = files[num_file - 1]
 
     source_html = md_html(markdown_source_file)
+
     parser = MySoupParser()
     parser.feed(source_html)
     output = Template(filename=template_html_name, input_encoding='utf-8')
+
 
     nav = '<ul>'
     i = 1
@@ -66,6 +68,8 @@ def generate_html_from_md():
             section) + '">' + section + '</a></li>'
         i = i + 1
     nav += '</ul>'
+
+
 
     main_content = ''
     class_name = 'active'
@@ -79,17 +83,19 @@ def generate_html_from_md():
     global generated_html
 
     generated_html = generated_path + slugify(parser.title) + ".html"
+
     f = open(generated_html, encoding='utf-8', mode="w+")
 
-    f.write(output.render(
-        title=parser.header,
-        doc_title=parser.title,
-        page_name="Tutorial",
-        github_url="https://mchou69.github.io",
-        nav_section=nav,
-        topics=parser.sections,
-        content=main_content
-    )
+    f.write(
+        output.render(
+            title=parser.header,
+            doc_title=parser.title,
+            page_name="Tutorial",
+            github_url=parser.github_url,
+            nav_section=nav,
+            topics=parser.sections,
+            content=main_content
+        )
     )
 
     f.close()

@@ -4,7 +4,8 @@ id:                tests
 categories:        mobile
 environments:      dev
 status:            tutorial
-feedback link:
+status:            tutorial
+feedback link:     https://github.com/mchou69/mcgit.git
 
 
 # Tests : Tutorial

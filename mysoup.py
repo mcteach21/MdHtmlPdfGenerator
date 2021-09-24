@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 
 
 class MySoupParser:
+    github_url = ''
     header = ''
     title = ''
     sections = []
@@ -13,6 +14,10 @@ class MySoupParser:
         self.pages = []
 
         soup = BeautifulSoup(source_html, 'html.parser')
+
+        urls = soup.find().text.split('feedback link: ')
+        if len(urls) > 1:
+            self.github_url = urls[1].strip()
 
         self.header = soup.find('h1').text
         self.title = soup.find('h1').text
