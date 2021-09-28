@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['generator.py'],
-             pathex=['C:\\Dev\\PycharmProjects\\mc-html-gen'],
+             pathex=['C:\\Dev\\PycharmProjects\\MdHtmlPdfGenerator'],
              binaries=[],
              datas=[],
              hiddenimports=[],

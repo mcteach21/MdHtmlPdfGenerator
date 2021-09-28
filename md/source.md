@@ -76,3 +76,25 @@ Ad distinctio excepturi iure tempore voluptatibus! Esse, expedita, quaerat?
 Alias amet beatae consequatur cupiditate eligendi, eveniet obcaecati possimus, 
 quae recusandae similique voluptas!
  
+## section 2
+lorem  ipsum..
+
+### sub-section 2-1
+
+aaaaaaaaaa
+
+> Positive L'Apprentissage automatique (en anglais **machine learning**--
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Ad distinctio excepturi iure tempore voluptatibus! Esse, expedita, quaerat? 
+Alias amet beatae consequatur cupiditate eligendi, eveniet obcaecati possimus, 
+quae recusandae similique voluptas!
+
+### sub-section 2-2
+
+bbbbbbbbbbb
+
+> Negative
+> : Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Ad distinctio excepturi iure tempore voluptatibus! Esse, expedita, quaerat? 
+Alias amet beatae consequatur cupiditate eligendi, eveniet obcaecati possimus, 
+quae recusandae similique voluptas!

@@ -70,10 +70,10 @@ body {
     margin-bottom: 0;
 }
 ul, ol, dl {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    list-style-image: none;
+   /*  margin: 0;
+   padding: 0;
+   list-style: none;
+   list-style-image: none; */
 }
 .nav-second-left a {
     display: inline-block;
@@ -139,10 +139,10 @@ a:hover {
 }
 
 .main-section-content {
-    padding: 1.618em 3.236em;
-    height: 100%;
+    padding: 1.2em 2.236em;
+    /* height: 100%;
     max-width: 1000px;
-    margin: auto;
+    margin: auto; */
 }
 
 .wy-breadcrumbs li {
@@ -150,6 +150,7 @@ a:hover {
 }
 .wy-breadcrumbs li.wy-breadcrumbs-aside {
     float: right;
+    margin-right: 15px;
 }
 .section ul{
     list-style: disc;
@@ -347,3 +348,4 @@ blockquote p{
     background: #FEF7E0;
     color: #212124;
 }
+

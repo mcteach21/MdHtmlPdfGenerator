@@ -8,7 +8,7 @@ from markdown.inlinepatterns import SimpleTagPattern, Pattern
 
 import unidecode
 
-from mysoup import MySoupParser
+from mysoup00 import MySoupParser
 
 XXX_RE = r'(Positive )(.*?)'
 

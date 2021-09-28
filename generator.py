@@ -4,6 +4,7 @@ import webbrowser
 import markdown
 import re
 import unidecode
+from bs4 import BeautifulSoup
 
 # from pygments import highlight
 # from pygments.formatters.html import HtmlFormatter
@@ -13,7 +14,7 @@ from termcolor import colored
 from mako.template import Template
 from mysoup import MySoupParser
 
-menu_color = 'white'
+menu_color = 'green'
 
 generated_path = 'html\\'
 generated_html = ''
@@ -60,24 +61,46 @@ def generate_html_from_md():
     parser.feed(source_html)
     output = Template(filename=template_html_name, input_encoding='utf-8')
 
-
     nav = '<ul>'
     i = 1
+
+    num_section = 0
     for section in parser.sections:
-        nav += '<li class="toctree-l1" id="nav_' + str(i) + '"><a class="reference internal" href="#' + slugify(
-            section) + '">' + section + '</a></li>'
-        i = i + 1
+
+        subsections = parser.sommaire[num_section]
+
+        nav += '<li class="toctree-l0" data-subsections="' + str(
+            len(subsections)) + '"><a class="reference internal dropdown-btn toctree-l1" href="#' \
+               + slugify(section) + '"  id="nav_' + str(num_section + 1) + '">' + section + '</a>'
+
+        if len(subsections) > 0:
+            nav += '<div class ="dropdown-container" id="nav_' + str(num_section + 1) + '_sub" >'
+            nav += '<ul>'
+            n = 1
+            subsections = parser.sommaire[num_section]
+            for subsection in subsections:
+                nav += '<li id="nav_' + str(num_section + 1) + str(n) + '" class ="toctree-l1"><a href="#' + slugify(
+                    subsection) + '">' + subsection + '</a></li>'
+                n = n + 1
+
+            nav += '</ul></div>'
+
+        nav += '</li>'
+        num_section = num_section + 1
+
     nav += '</ul>'
-
-
 
     main_content = ''
     class_name = 'active'
     i = 0
+
     for page in parser.pages:
-        main_content += '<section id="' + slugify(
-            parser.sections[i]) + '" class="article ' + class_name + '">' + page + '</section>'
+        page_new = page  # parser.subsections_update_ids(page)
+        main_content += '<section id="' + slugify(parser.sections[i]) + '" class="article ' + class_name + '">' + str(
+            page_new) + '</section>'
+
         class_name = 'hidden'
+
         i += 1
 
     global generated_html
