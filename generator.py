@@ -12,6 +12,8 @@ from bs4 import BeautifulSoup
 
 from termcolor import colored
 from mako.template import Template
+
+import mysoup
 from mysoup import MySoupParser
 
 menu_color = 'green'
@@ -45,6 +47,15 @@ def md_html(markdown_source_file):
     source = open(markdown_source_file, encoding='utf-8', mode="r")
     html = markdown.markdown(source.read(), extensions=['markdown.extensions.tables', 'markdown.extensions.codehilite'])
     return html
+
+
+def next_elem(elem):
+    while elem is not None:
+        elem = elem.next_sibling
+        return elem
+
+        # if hasattr(elem, 'name'):
+        #     return elem
 
 
 def generate_html_from_md():
@@ -95,12 +106,13 @@ def generate_html_from_md():
     i = 0
 
     for page in parser.pages:
-        page_new = page  # parser.subsections_update_ids(page)
-        main_content += '<section id="' + slugify(parser.sections[i]) + '" class="article ' + class_name + '">' + str(
-            page_new) + '</section>'
+        # print('******************************************')
+        # print(page)
+        # print('******************************************')
 
+        # page_new = page  # parser.clean_code_header(page)
+        main_content += '<section id="' + slugify(parser.sections[i]) + '" class="article ' + class_name + '">' + str(page) + '</section>'
         class_name = 'hidden'
-
         i += 1
 
     global generated_html

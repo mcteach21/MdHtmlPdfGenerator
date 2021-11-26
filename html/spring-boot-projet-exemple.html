@@ -1,0 +1,720 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style-blog.css" />
+    <link rel="stylesheet" href="assets/css/codehilite.css" />
+    <link rel="stylesheet" href="assets/css/monokai.theme.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <script src="https://kit.fontawesome.com/7f0b5f1f38.js" crossorigin="anonymous"></script>
+    <title>Spring boot - Projet Exemple</title>
+    <script src="https://kit.fontawesome.com/7f0b5f1f38.js" crossorigin="anonymous"></script>
+    <title>Spring boot - Projet Exemple</title>
+</head>
+<body>
+    <a href="#" id="night-mode"><i class="fas fa-moon"></i></a>
+    <div class="main">
+          <nav class="left-nav">
+            <div class="nav-left-content">
+              <div class="nav-top-left">
+                <h4>
+                  <a href="#" class="icon icon-home">Spring boot - Projet Exemple</a>
+                </h4>
+              </div>
+              <div class="nav-second-left">
+                 <ul><li class="toctree-l0" data-subsections="0"><a class="reference internal dropdown-btn toctree-l1" href="#introduction"  id="nav_1">Introduction</a></li><li class="toctree-l0" data-subsections="9"><a class="reference internal dropdown-btn toctree-l1" href="#creation-projet-web"  id="nav_2">Création Projet Web</a><div class ="dropdown-container" id="nav_2_sub" ><ul><li id="nav_21" class ="toctree-l1"><a href="#classe-principale">Classe principale</a></li><li id="nav_22" class ="toctree-l1"><a href="#fichier-de-configuration">Fichier de Configuration</a></li><li id="nav_23" class ="toctree-l1"><a href="#vues-et-thymeleaf">Vues et Thymeleaf</a></li><li id="nav_24" class ="toctree-l1"><a href="#controller-mvc-">Controller (MVC)</a></li><li id="nav_25" class ="toctree-l1"><a href="#securite">Securité</a></li><li id="nav_26" class ="toctree-l1"><a href="#persistence">Persistence</a></li><li id="nav_27" class ="toctree-l1"><a href="#controleur-rest-todocontroller-">Controleur Rest (TodoController)</a></li><li id="nav_28" class ="toctree-l1"><a href="#tests-api-rest-assured-">Tests API (Rest Assured)</a></li><li id="nav_29" class ="toctree-l1"><a href="#tests-api-mockit-mockmvc-">Tests API (Mockit + MockMvc)</a></li></ul></div></li></ul>
+              </div>
+            </div>
+          </nav>
+          <section class="main-section">
+              <nav class="main-section-top" role="navigation" aria-label="top navigation">
+                <a href="#">Spring boot - Projet Exemple</a>
+                <button class="navbar-toggler" style="float:right;margin-right:20px;" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="color:white"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav-mob">
+                         <ul><li class="toctree-l0" data-subsections="0"><a class="reference internal dropdown-btn toctree-l1" href="#introduction"  id="nav_1">Introduction</a></li><li class="toctree-l0" data-subsections="9"><a class="reference internal dropdown-btn toctree-l1" href="#creation-projet-web"  id="nav_2">Création Projet Web</a><div class ="dropdown-container" id="nav_2_sub" ><ul><li id="nav_21" class ="toctree-l1"><a href="#classe-principale">Classe principale</a></li><li id="nav_22" class ="toctree-l1"><a href="#fichier-de-configuration">Fichier de Configuration</a></li><li id="nav_23" class ="toctree-l1"><a href="#vues-et-thymeleaf">Vues et Thymeleaf</a></li><li id="nav_24" class ="toctree-l1"><a href="#controller-mvc-">Controller (MVC)</a></li><li id="nav_25" class ="toctree-l1"><a href="#securite">Securité</a></li><li id="nav_26" class ="toctree-l1"><a href="#persistence">Persistence</a></li><li id="nav_27" class ="toctree-l1"><a href="#controleur-rest-todocontroller-">Controleur Rest (TodoController)</a></li><li id="nav_28" class ="toctree-l1"><a href="#tests-api-rest-assured-">Tests API (Rest Assured)</a></li><li id="nav_29" class ="toctree-l1"><a href="#tests-api-mockit-mockmvc-">Tests API (Mockit + MockMvc)</a></li></ul></div></li></ul>
+                    </div>
+                 </div>
+              </nav>
+              <div class="main-section-content">
+                  <div class="rst-content">
+                    <div role="navigation" aria-label="breadcrumbs navigation">
+                      <ul class="wy-breadcrumbs">
+                        <li><a href="index.html">Index</a> <i class="fas fa-angle-double-right"></i></li>
+                        <li>Spring boot - Projet Exemple</li>
+                        <li class="wy-breadcrumbs-aside">
+                          <a href="https://github.com/mcteach21/SpringBootStart.git"><i class="fab fa-github-square"></i>GitHub</a>
+                        </li>
+                      </ul>
+                      <hr>
+                    </div>
+                  </div>
+
+                  <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                      <div itemprop="articleBody">
+                          <section id="introduction" class="article active"><h2>Introduction</h2>
+
+
+<p>Spring Boot est un framework qui permet de démarrer rapidement le développement d'applications ou services.</p>
+
+
+<p><img alt="spring boot platform" src="images/spring_boot_intro_1.png"/></p>
+
+
+<p>Il fournit les dépendances nécessaires au projet et simplifie la configuation de celles-ci (auto-configuration). Il s'appuie sur le concept de <strong>starters</strong> qui  permettent d'importer un ensemble de dépendances en fonction de l'application à développer.</p>
+
+
+<p>Spring Boot facilite la création d'applications Spring autonomes de qualité production.</p>
+
+
+<p>La plupart des applications Spring Boot nécessitent une configuration Spring minimale.</p>
+
+
+<p><img alt="spring boot platform" src="images/spring_boot_intro_2.png"/></p>
+
+</section><section id="creation-projet-web" class="article hidden"><h2>Création Projet Web</h2>
+
+
+<p>On peut générer le projet de base (configuration incluse) rapidement avec IntelliJ (ou Eclipse) :</p>
+
+
+<p><img alt="spring boot create project" src="images/spring_boot_create_project_1.png"/></p>
+
+
+<p>l'étape suivante consiste à sélectionner les <strong>starters</strong> (ensemble de dépendances) nécessaires au projet : web, moteur de template, base de données..etc.</p>
+
+
+<p><img alt="spring boot create project" src="images/spring_boot_create_project_2.png"/></p>
+
+
+<p>on obtient un projet de base (squellete) :</p>
+
+
+<p><img alt="spring boot create project" src="images/spring_boot_create_project_3.png"/></p>
+
+
+<h3>Classe principale</h3>
+
+
+<p>Une classe de configuration <strong>SpringBootStartApplication</strong> a été générée. 
+Elle est annotée par <strong>@SpringBootApplication</strong> qui encapsule les annotations (de spring framework) :
+<strong>@Configuration</strong> (configuration  via Beans), <strong>@EnableAutoConfiguration</strong>(générer automatiquement configurations selon dépendances situées dans classpath) et <strong>@ComponentScan</strong>(scan package pour Beans de configuration).</p>
+
+
+<p><img alt="spring boot configuration" src="images/spring_boot_intro_3.png"/></p>
+
+
+<h3>Fichier de Configuration</h3>
+
+
+<p>On définit dans le fichier <strong>application.properties</strong> (généré) les paramétrages ou configurations souhaités (port d'écoute de Tomcat, l'emplacement des fichiers de log, configuration sécurité, les paramètres d'envoi d'emails, etc..) :</p>
+
+
+<p><img alt="spring boot properties file" src="images/spring_boot_properties_file.png"/></p>
+
+
+<p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html">Liste complète des propriétés</a></p>
+
+
+<h3>Vues et Thymeleaf</h3>
+
+
+<p>On utilise le moteur de templates <strong>Thymeleaf</strong> pour générer les vues de l'application (front-end).</p>
+
+
+<blockquote>
+<p>Thymeleaf est un  <strong>Template Engine</strong> qui fonctionne dans des environnements Web (Java XML/XHTML/HTML5) et non Web. Il fournit une intégration complète de Spring Framework.</p>
+<p>Thymeleaf peut être utilisé pour remplacer JSP sur la couche View (View Layer) de l'application Web MVC. </p>
+<p>Thymeleaf est un logiciel à code source ouvert (open source) sous licence Apache 2.0.</p>
+</blockquote>
+
+
+<p>Dépendance Maven :</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-thymeleaf<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+
+<p>Création template (index.html) et ressources statiques (css, images, js) : </p>
+
+
+<p><img alt="thymeleaf template" src="images/spring_boot_thymeleaf_1.png"/></p>
+
+
+<p>index.html</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+    <span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns:th</span><span class="o">=</span><span class="s">"http://www.thymeleaf.org"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content</span><span class="o">=</span><span class="s">"IE=edge"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"shortcut icon"</span> <span class="na">type</span><span class="o">=</span><span class="s">"image/x-icon"</span> <span class="na">th:href</span><span class="o">=</span><span class="s">"@{/images/favicon.png}"</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">th:href</span><span class="o">=</span><span class="s">"@{/css/bootstrap.min.css}"</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">th:href</span><span class="o">=</span><span class="s">"@{/css/style.css}"</span><span class="p">/&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">"main"</span> <span class="na">class</span><span class="o">=</span><span class="s">"container"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Spring Boot - Index<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"alert alert-success"</span><span class="p">&gt;</span>
+                page générée avec <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://www.thymeleaf.org"</span><span class="p">&gt;</span>Thymeleaf<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur corporis hic id iste magni minus modi nobis numquam officia placeat possimus quidem, quos repellat ullam? Aut modi quas quisquam!
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<blockquote>
+<p>Par défaut, les fichiers <strong>template</strong> (vues html..) sont placés dans le dossier <strong>src/main/resources/templates</strong>  et les fichiers <strong>ressources statiques</strong> (css, js, images..) dans le dossier <strong>src/main/resources/static</strong>.</p>
+<p>On utilise l'attribut <strong>th:href</strong> de Thymeleaf pour charger les ressources statiques :</p>
+</blockquote>
+
+
+<p><img alt="thymeleaf template" src="images/spring_boot_thymeleaf_2.png"/></p>
+
+
+<p>Résultat : </p>
+
+
+<p><img alt="thymeleaf template" src="images/spring_boot_thymeleaf_3.png"/></p>
+
+
+<h3>Controller (MVC)</h3>
+
+
+<p>On va ajouter un simple Controleur <strong>FrontController</strong> qui affiche une page de bienvenue <strong>welcome.html</strong> (dans réperoire <strong>src/main/templates</strong>) avec un message (enregistré dans fichier de propriétés <strong>application.properties</strong>) :</p>
+
+
+<p>application.properties</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="o">#</span> <span class="k">general</span>
+    <span class="n">spring</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="s1">'Spring Boot Demo!'</span> 
+    <span class="n">welcome</span><span class="p">.</span><span class="n">message</span><span class="o">=</span><span class="n">Bienvenue</span> <span class="n">sur</span> <span class="n">notre</span> <span class="n">application</span> <span class="n">Spring</span> <span class="n">Boot</span><span class="o">!</span>
+
+    <span class="o">##</span> <span class="n">server</span>
+    <span class="n">server</span><span class="p">.</span><span class="n">port</span><span class="o">=</span><span class="mi">8081</span>
+</pre></div>
+
+
+<p>FrontController.java</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.ui.Model</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="p">;</span>
+
+    <span class="nd">@Controller</span>
+    <span class="n">public</span> <span class="k">class</span> <span class="nc">FrontController</span> <span class="p">{</span>
+        <span class="nd">@Value</span><span class="p">(</span><span class="s2">"${welcome.message}"</span><span class="p">)</span> <span class="o">//</span> <span class="n">injection</span> <span class="n">propriété</span> <span class="err">à</span> <span class="n">partir</span> <span class="s1">'application.properties'</span>
+        <span class="n">String</span> <span class="n">message</span><span class="p">;</span>
+
+        <span class="nd">@GetMapping</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span> <span class="o">//</span> <span class="n">mapping</span> <span class="n">des</span> <span class="n">requêtes</span> <span class="n">Http</span> <span class="n">GET</span> 
+        <span class="n">public</span> <span class="n">String</span> <span class="n">index</span><span class="p">(</span><span class="n">Model</span> <span class="n">model</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">addAttribute</span><span class="p">(</span><span class="s2">"message"</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span> <span class="o">//</span> <span class="n">envoi</span> <span class="n">propriété</span> <span class="err">à</span> <span class="n">la</span> <span class="n">vue</span>
+            <span class="k">return</span> <span class="s2">"welcome"</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>welcome.html</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+    <span class="nt">&lt;html</span> <span class="na">xmlns:th=</span><span class="s">"http://www.thymeleaf.org"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"shortcut icon"</span> <span class="na">type=</span><span class="s">"image/x-icon"</span> <span class="na">th:href=</span><span class="s">"@{/images/favicon.png}"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">th:href=</span><span class="s">"@{/css/bootstrap.min.css}"/</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">th:href=</span><span class="s">"@{/css/style.css}"/</span><span class="nt">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"main"</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3&gt;</span>Welcome<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- afficher propriété 'message' envoyée par controller --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-success"</span> <span class="na">th:text=</span><span class="s">"</span><span class="cp">${</span><span class="n">message</span><span class="cp">}</span><span class="s">"</span><span class="nt">&gt;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>Résulat :</p>
+
+
+<p><img alt="MVC Result" src="images/spring_boot_mvc_result.png"/></p>
+
+
+<h3>Securité</h3>
+
+
+<p>On va ajouter la couche sécurité à l'application en incluant <strong>spring-boot-starter-security</strong> :</p>
+
+
+<p>Dépendance Maven </p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-security<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+
+<p>Une fois que la dépendance <strong>spring-boot-starter-security</strong> validée dans l'application, tous les points de terminaison sont sécurisés par défaut, à l'aide de httpBasic ou formLogin en fonction de la stratégie de négociation de contenu de Spring Security.</p>
+
+
+<p><img alt="Spring boot Security" src="images/spring_boot_security_1.png"/></p>
+
+
+<p>application.properties</p>
+
+
+<div class="codehilite"><pre><span></span><span class="err">    ...</span>
+<span class="err">    ## Security</span>
+<span class="err">    spring.security.user.name=mc</span>
+<span class="err">    spring.security.user.password=123</span>
+</pre></div>
+
+
+<p><img alt="Spring boot Security" src="images/spring_boot_security_2.png"/></p>
+
+
+<p>On va définir une configuration de sécurité personnalisée grâce à une classe qui hérite de la classe <strong>WebSecurityConfigurerAdapter</strong> :</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.security.config.annotation.web.builders.HttpSecurity</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.security.config.annotation.web.configuration.EnableWebSecurity</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.security.web.util.matcher.AntPathRequestMatcher</span><span class="p">;</span>
+
+    <span class="nd">@Configuration</span>
+    <span class="nd">@EnableWebSecurity</span>
+    <span class="n">public</span> <span class="k">class</span> <span class="nc">CustomSecurityConfig</span> <span class="n">extends</span> <span class="n">WebSecurityConfigurerAdapter</span> <span class="p">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="n">protected</span> <span class="n">void</span> <span class="n">configure</span><span class="p">(</span><span class="n">HttpSecurity</span> <span class="n">http</span><span class="p">)</span> <span class="n">throws</span> <span class="ne">Exception</span> <span class="p">{</span>
+            <span class="n">http</span><span class="o">.</span><span class="n">authorizeRequests</span><span class="p">()</span>
+                    <span class="o">//.</span><span class="n">anyRequest</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">antMatchers</span><span class="p">(</span><span class="s2">"/admin/**"</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">authenticated</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">antMatchers</span><span class="p">(</span><span class="s2">"/css/**"</span><span class="p">,</span><span class="s2">"/webjars/**"</span><span class="p">,</span><span class="s2">"/images/**"</span><span class="p">,</span> <span class="s2">"/**"</span><span class="p">)</span><span class="o">.</span><span class="n">permitAll</span><span class="p">()</span>
+                    <span class="o">.</span><span class="ow">and</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">formLogin</span><span class="p">()</span>
+                    <span class="o">//</span>  <span class="o">.</span><span class="n">loginPage</span><span class="p">(</span><span class="s2">"/login"</span><span class="p">)</span><span class="o">.</span><span class="n">permitAll</span><span class="p">()</span>
+                    <span class="o">.</span><span class="ow">and</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">logout</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">logoutRequestMatcher</span><span class="p">(</span><span class="n">new</span> <span class="n">AntPathRequestMatcher</span><span class="p">(</span><span class="s2">"/logout"</span><span class="p">))</span>
+                    <span class="o">.</span><span class="ow">and</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">csrf</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">disable</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><img alt="Spring boot Security" src="images/spring_boot_security_3.png"/></p>
+
+
+<p><img alt="Spring boot Security" src="images/spring_boot_security_4.png"/></p>
+
+
+<p><img alt="Spring boot Security" src="images/spring_boot_security_5.png"/></p>
+
+
+<p><img alt="Spring boot Security" src="images/spring_boot_security_6.png"/></p>
+
+
+<h3>Persistence</h3>
+
+
+<p>On a besoin de <strong>spring-boot-starter-data-jpa</strong> pour mettre en place la persistence et dépendance du type de base de données à utiliser (ici <strong>H2</strong> pour les tests).</p>
+
+
+<p>On ajoute les dépendances Maven suivantes :</p>
+
+
+<div class="codehilite"><pre><span></span>     <span class="c">&lt;!-- Persistence --&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-data-jpa<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>h2<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+
+<blockquote>
+<p>H2 (SGBD relationnel écrit en Java) peut être intégré à une application Java ou bien fonctionner en mode client-serveur. H2 peut être configurée pour s'exécuter en tant que base de données en <strong>mémoire</strong> (pas de persistence sur le disque) et utilisée principalement pour le développement et les tests. </p>
+</blockquote>
+
+
+<p>On crée une classe Entity (modele de données) :</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="n">package</span> <span class="n">mc</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">spring</span><span class="o">.</span><span class="n">db</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">javax.persistence.</span><span class="o">*</span><span class="p">;</span>
+
+    <span class="nd">@Entity</span>
+    <span class="n">public</span> <span class="k">class</span> <span class="nc">Todo</span> <span class="p">{</span>
+        <span class="nd">@Id</span>
+        <span class="nd">@GeneratedValue</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="n">IDENTITY</span><span class="p">)</span>
+        <span class="n">private</span> <span class="nb">long</span> <span class="nb">id</span><span class="p">;</span>
+
+        <span class="nd">@Column</span><span class="p">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="n">false</span><span class="p">)</span>
+        <span class="n">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
+
+        <span class="nd">@Column</span><span class="p">(</span><span class="n">columnDefinition</span> <span class="o">=</span> <span class="s2">"boolean default false"</span><span class="p">)</span>
+        <span class="n">private</span> <span class="n">Boolean</span> <span class="n">done</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>..et une classe Repository (couche d'accès aux donnée) :</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="n">package</span> <span class="n">mc</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">spring</span><span class="o">.</span><span class="n">db</span><span class="p">;</span>
+
+    <span class="kn">import</span> <span class="nn">org.springframework.data.repository.CrudRepository</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">interface</span> <span class="n">TodoRepository</span> <span class="n">extends</span> <span class="n">CrudRepository</span><span class="o">&lt;</span><span class="n">Todo</span><span class="p">,</span><span class="n">Long</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">&gt;</span> <span class="n">findByTitle</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>ajouter les propriétés de la source de données dans <strong>application.properties</strong> :</p>
+
+
+<div class="codehilite"><pre><span></span><span class="err">    # Persistence (H2)</span>
+<span class="err">    spring.datasource.url=jdbc:h2:mem:todosDb</span>
+<span class="err">    spring.datasource.driverClassName=org.h2.Driver</span>
+<span class="err">    spring.datasource.username=sa</span>
+<span class="err">    spring.datasource.password=</span>
+<span class="err">    spring.jpa.database-platform=org.hibernate.dialect.H2Dialect</span>
+</pre></div>
+
+
+<h3>Controleur Rest (TodoController)</h3>
+
+
+<p>On va implmenter des opérations CRUD (pour exposer les ressources <strong>Todo</strong>) dans un Controleur Rest :</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="kn">import</span> <span class="nn">mc.apps.spring.db.Todo</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">mc.apps.spring.db.TodoRepository</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">mc.apps.spring.exceptions.TodoIdMismatchException</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">mc.apps.spring.exceptions.TodoNotFoundException</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.http.HttpStatus</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.</span><span class="o">*</span><span class="p">;</span>
+
+    <span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+
+    <span class="nd">@RestController</span>
+    <span class="nd">@RequestMapping</span><span class="p">(</span><span class="s2">"/api/todos"</span><span class="p">)</span>
+    <span class="n">public</span> <span class="k">class</span> <span class="nc">TodoController</span> <span class="p">{</span>
+        <span class="nd">@Autowired</span>
+        <span class="n">private</span> <span class="n">TodoRepository</span> <span class="n">TodoRepository</span><span class="p">;</span>
+
+        <span class="nd">@GetMapping</span>
+        <span class="n">public</span> <span class="n">Iterable</span> <span class="n">findAll</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">TodoRepository</span><span class="o">.</span><span class="n">findAll</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="nd">@GetMapping</span><span class="p">(</span><span class="s2">"/title/{TodoTitle}"</span><span class="p">)</span>
+        <span class="n">public</span> <span class="n">List</span> <span class="n">findByTitle</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="n">String</span> <span class="n">TodoTitle</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">List</span><span class="p">)</span> <span class="n">TodoRepository</span><span class="o">.</span><span class="n">findByTitle</span><span class="p">(</span><span class="n">TodoTitle</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nd">@GetMapping</span><span class="p">(</span><span class="s2">"/{id}"</span><span class="p">)</span>
+        <span class="n">public</span> <span class="n">Todo</span> <span class="n">findOne</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="n">Long</span> <span class="nb">id</span><span class="p">)</span> <span class="n">throws</span> <span class="n">TodoNotFoundException</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">TodoRepository</span><span class="o">.</span><span class="n">findById</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">orElseThrow</span><span class="p">(</span><span class="n">TodoNotFoundException</span><span class="p">::</span><span class="n">new</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nd">@PostMapping</span>
+        <span class="nd">@ResponseStatus</span><span class="p">(</span><span class="n">HttpStatus</span><span class="o">.</span><span class="n">CREATED</span><span class="p">)</span>
+        <span class="n">public</span> <span class="n">Todo</span> <span class="n">create</span><span class="p">(</span><span class="nd">@RequestBody</span> <span class="n">Todo</span> <span class="n">Todo</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">TodoRepository</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">Todo</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nd">@DeleteMapping</span><span class="p">(</span><span class="s2">"/{id}"</span><span class="p">)</span>
+        <span class="n">public</span> <span class="n">void</span> <span class="n">delete</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="n">Long</span> <span class="nb">id</span><span class="p">)</span> <span class="n">throws</span> <span class="n">TodoNotFoundException</span> <span class="p">{</span>
+            <span class="n">TodoRepository</span><span class="o">.</span><span class="n">findById</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">orElseThrow</span><span class="p">(</span><span class="n">TodoNotFoundException</span><span class="p">::</span><span class="n">new</span><span class="p">);</span>
+            <span class="n">TodoRepository</span><span class="o">.</span><span class="n">deleteById</span><span class="p">(</span><span class="nb">id</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nd">@PutMapping</span><span class="p">(</span><span class="s2">"/{id}"</span><span class="p">)</span>
+        <span class="n">public</span> <span class="n">Todo</span> <span class="n">updateTodo</span><span class="p">(</span><span class="nd">@RequestBody</span> <span class="n">Todo</span> <span class="n">Todo</span><span class="p">,</span> <span class="nd">@PathVariable</span> <span class="n">Long</span> <span class="nb">id</span><span class="p">)</span> <span class="n">throws</span> <span class="n">TodoIdMismatchException</span><span class="p">,</span> <span class="n">TodoNotFoundException</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">Todo</span><span class="o">.</span><span class="n">getId</span><span class="p">()</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">throw</span> <span class="n">new</span> <span class="n">TodoIdMismatchException</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="n">TodoRepository</span><span class="o">.</span><span class="n">findById</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">orElseThrow</span><span class="p">(</span><span class="n">TodoNotFoundException</span><span class="p">::</span><span class="n">new</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">TodoRepository</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">Todo</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+</pre></div>
+
+
+<blockquote>
+<p>Spring 4.0 a introduit l'annotation <strong>@RestController</strong> afin de simplifier la création de <strong>services Web RESTful</strong>.</p>
+</blockquote>
+
+
+<h3>Tests API (Rest Assured)</h3>
+
+
+<p>On va utiliser <strong>Rest Assured</strong> qui permet de tester les API REST à l'aide de bibliothèques Java.</p>
+
+
+<p>Dépendance Maven :</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>io.rest-assured<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>rest-assured<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+
+<p>On va créer nos tests dans une classe de tests <strong>RestControllerTests</strong> :</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="kn">import</span> <span class="nn">io.restassured.RestAssured</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">io.restassured.response.Response</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">mc.apps.spring.db.Todo</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.http.HttpStatus</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.springframework.http.MediaType</span><span class="p">;</span>
+
+    <span class="kn">import</span> <span class="nn">static</span> <span class="nn">org.junit.jupiter.api.Assertions.assertEquals</span><span class="p">;</span>
+
+    <span class="nd">@SpringBootTest</span>
+    <span class="n">public</span> <span class="k">class</span> <span class="nc">RestControllerTests</span> <span class="p">{</span>
+        <span class="n">private</span> <span class="n">static</span> <span class="n">final</span> <span class="n">String</span> <span class="n">API_ROOT</span> <span class="o">=</span> <span class="s2">"http://localhost:8081/api/todos"</span><span class="p">;</span>
+
+        <span class="nd">@Test</span>
+        <span class="n">public</span> <span class="n">void</span> <span class="n">whenGetAllTodos_thenOK</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">RestAssured</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">API_ROOT</span><span class="p">);</span>
+            <span class="n">assertEquals</span><span class="p">(</span><span class="n">HttpStatus</span><span class="o">.</span><span class="n">OK</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="n">response</span><span class="o">.</span><span class="n">getStatusCode</span><span class="p">());</span>
+
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">"*******************************"</span><span class="p">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">"Response : "</span><span class="o">+</span><span class="n">response</span><span class="o">.</span><span class="n">getBody</span><span class="p">()</span><span class="o">.</span><span class="n">asString</span><span class="p">());</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">"*******************************"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nd">@Test</span>
+        <span class="n">public</span> <span class="n">void</span> <span class="n">whenCreateNewTodo_thenCreated</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">Todo</span> <span class="n">todo</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Todo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">"Hello from Spring"</span><span class="p">,</span><span class="n">true</span><span class="p">);</span>
+            <span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">RestAssured</span><span class="o">.</span><span class="n">given</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">contentType</span><span class="p">(</span><span class="n">MediaType</span><span class="o">.</span><span class="n">APPLICATION_JSON_VALUE</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">body</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">API_ROOT</span><span class="p">);</span>
+
+            <span class="n">assertEquals</span><span class="p">(</span><span class="n">HttpStatus</span><span class="o">.</span><span class="n">CREATED</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="n">response</span><span class="o">.</span><span class="n">getStatusCode</span><span class="p">());</span>
+
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">"*******************************"</span><span class="p">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">"Response : "</span><span class="o">+</span><span class="n">response</span><span class="o">.</span><span class="n">getBody</span><span class="p">()</span><span class="o">.</span><span class="n">asString</span><span class="p">());</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">"*******************************"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="o">//..</span><span class="n">autres</span> <span class="n">tests</span><span class="o">..</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><img alt="Spring boot api rest tests" src="images/spring_boot_api_tests_1.png"/>
+<img alt="Spring boot api rest tests" src="images/spring_boot_api_tests_2.png"/></p>
+
+
+<p><img alt="Spring boot api rest" src="images/spring_boot_api_rest.png"/></p>
+
+
+<h3>Tests API (Mockit + MockMvc)</h3>
+
+
+<p>Pour ces nouveaux tests, on va utiliser JUnit5, Mockit et MockMvc.</p>
+
+
+<p>Ajout <strong>JUnit 5</strong> : </p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="nt">&lt;dependency&gt;</span>
+      <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+      <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+      <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+      <span class="nt">&lt;exclusions&gt;</span>
+       <span class="c">&lt;!-- exclure version 4 déjà incluse --&gt;</span>
+        <span class="nt">&lt;exclusion&gt;</span>
+          <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
+          <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/exclusion&gt;</span>
+      <span class="nt">&lt;/exclusions&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+      <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+      <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-engine<span class="nt">&lt;/artifactId&gt;</span>
+      <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+
+<p><strong>Mockito</strong> s’utilise conjointement à JUnit. Il va permettre de <strong>simuler les comportements</strong> des dépendances afin d’isoler les tests.</p>
+
+
+<div class="codehilite"><pre><span></span>    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.mockito<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>mockito-core<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+
+<blockquote>
+<p>Pas de version spécifiée pour les dépendances : téléchargement de la dernière version stable disponible de cette dépendance à partir du référentiel utilisé.</p>
+</blockquote>
+
+
+<p><strong>MockMvc</strong> (déjà intégré dans JUnit 5) est un module de Spring pour effectuer des tests d'intégration lors des tests unitaires. </p>
+
+
+<blockquote>
+<p>MockMVC est une solution pour permettre les tests unitaires de la couche Web. Habituellement, le test des API REST est effectué pendant les tests d'intégration, ce qui signifie que l'application doit être exécutée dans un conteneur pour tester si les points de terminaison fonctionnent ou non. MockMVC permet de tester la couche Web lors des tests unitaires avec les configurations appropriées, mais <strong>sans avoir à déployer l'application</strong>.</p>
+</blockquote>
+
+
+<p>Création de la classe de tests : </p>
+
+
+<div class="codehilite"><pre><span></span><span class="w">    </span><span class="nv">@WebMvcTest</span><span class="p">(</span><span class="n">TodoController</span><span class="p">.</span><span class="k">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="n">TodoControllerTests</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="nv">@Autowired</span><span class="w"></span>
+<span class="w">        </span><span class="n">MockMvc</span><span class="w"> </span><span class="n">mockMvc</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="nv">@Autowired</span><span class="w"></span>
+<span class="w">        </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">mapper</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="nv">@MockBean</span><span class="w"></span>
+<span class="w">        </span><span class="n">TodoRepository</span><span class="w"> </span><span class="n">todoRepository</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">cpt</span><span class="o">=</span><span class="mi">1</span><span class="n">L</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">private</span><span class="w"> </span><span class="n">Todo</span><span class="w"> </span><span class="n">createRandomTodo</span><span class="p">()</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Todo</span><span class="p">(</span><span class="n">cpt</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">RandomStringUtils</span><span class="p">.</span><span class="n">randomAlphabetic</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span><span class="w"> </span><span class="k">false</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">todos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="n">asList</span><span class="p">(</span><span class="w"></span>
+<span class="w">                </span><span class="n">createRandomTodo</span><span class="p">(),</span><span class="w"> </span><span class="n">createRandomTodo</span><span class="p">(),</span><span class="w"> </span><span class="n">createRandomTodo</span><span class="p">())</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="nv">@Test</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">void</span><span class="w"> </span><span class="n">getAllTodos_success</span><span class="p">()</span><span class="w"> </span><span class="n">throws</span><span class="w"> </span><span class="k">Exception</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">todoRepository</span><span class="w"> </span><span class="ss">"mocké"</span><span class="err">!</span><span class="w"></span>
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">lors</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">test</span><span class="p">,</span><span class="w"> </span><span class="n">tout</span><span class="w"> </span><span class="n">appel</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">méthode</span><span class="w"> </span><span class="n">findAll</span><span class="p">()</span><span class="w"> </span><span class="n">retournera</span><span class="w"> </span><span class="n">todos</span><span class="w"></span>
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">sans</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="n">ne</span><span class="w"> </span><span class="n">soit</span><span class="w"> </span><span class="n">réellement</span><span class="w"> </span><span class="n">interrogée</span><span class="w"></span>
+<span class="w">            </span><span class="n">Mockito</span><span class="p">.</span><span class="k">when</span><span class="p">(</span><span class="n">todoRepository</span><span class="p">.</span><span class="n">findAll</span><span class="p">()).</span><span class="n">thenReturn</span><span class="p">(</span><span class="n">todos</span><span class="p">);</span><span class="w"></span>
+
+
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">MockMvc</span><span class="w"> </span><span class="p">(</span><span class="k">module</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">SpringTest</span><span class="p">)</span><span class="w"> </span><span class="n">permet</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">simplifier</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">création</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="n">Rest</span><span class="w"></span>
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">SANS</span><span class="w"> </span><span class="n">dépendance</span><span class="w"> </span><span class="n">explicite</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">conteneur</span><span class="w"> </span><span class="n">web</span><span class="p">.</span><span class="w"></span>
+<span class="w">            </span><span class="n">mockMvc</span><span class="p">.</span><span class="n">perform</span><span class="p">(</span><span class="n">MockMvcRequestBuilders</span><span class="w"></span>
+<span class="w">                            </span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="ss">"/api/todos"</span><span class="p">)</span><span class="w"></span>
+<span class="w">                            </span><span class="p">.</span><span class="n">contentType</span><span class="p">(</span><span class="n">MediaType</span><span class="p">.</span><span class="n">APPLICATION_JSON</span><span class="p">))</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="n">isOk</span><span class="p">())</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">andExpect</span><span class="p">(</span><span class="n">jsonPath</span><span class="p">(</span><span class="ss">"$"</span><span class="p">,</span><span class="w"> </span><span class="n">hasSize</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">andExpect</span><span class="p">(</span><span class="n">jsonPath</span><span class="p">(</span><span class="ss">"$[0].id"</span><span class="p">,</span><span class="w"> </span><span class="k">is</span><span class="p">(</span><span class="mi">1</span><span class="p">)));</span><span class="w"></span>
+<span class="w">        </span><span class="err">}</span><span class="w"></span>
+<span class="w">        </span><span class="nv">@Test</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">void</span><span class="w"> </span><span class="n">getTodoById_success</span><span class="p">()</span><span class="w"> </span><span class="n">throws</span><span class="w"> </span><span class="k">Exception</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Todo</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">todos</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">Mockito</span><span class="p">.</span><span class="k">when</span><span class="p">(</span><span class="n">todoRepository</span><span class="p">.</span><span class="n">findById</span><span class="p">(</span><span class="n">todo</span><span class="p">.</span><span class="n">getId</span><span class="p">())).</span><span class="n">thenReturn</span><span class="p">(</span><span class="n">Optional</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="n">todo</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">mockMvc</span><span class="p">.</span><span class="n">perform</span><span class="p">(</span><span class="n">MockMvcRequestBuilders</span><span class="w"></span>
+<span class="w">                            </span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="ss">"/api/todos/"</span><span class="o">+</span><span class="n">todo</span><span class="p">.</span><span class="n">getId</span><span class="p">())</span><span class="w"></span>
+<span class="w">                            </span><span class="p">.</span><span class="n">contentType</span><span class="p">(</span><span class="n">MediaType</span><span class="p">.</span><span class="n">APPLICATION_JSON</span><span class="p">))</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="n">isOk</span><span class="p">())</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">andExpect</span><span class="p">(</span><span class="n">jsonPath</span><span class="p">(</span><span class="ss">"$"</span><span class="p">,</span><span class="w"> </span><span class="n">notNullValue</span><span class="p">()))</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">andExpect</span><span class="p">(</span><span class="n">jsonPath</span><span class="p">(</span><span class="ss">"$.title"</span><span class="p">,</span><span class="w"> </span><span class="k">is</span><span class="p">(</span><span class="n">todo</span><span class="p">.</span><span class="n">getTitle</span><span class="p">())));</span><span class="w"></span>
+<span class="w">        </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="nv">@Test</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">void</span><span class="w"> </span><span class="n">createTodo_success</span><span class="p">()</span><span class="w"> </span><span class="n">throws</span><span class="w"> </span><span class="k">Exception</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Todo</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Todo</span><span class="p">(</span><span class="ss">"Spring!"</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">Mockito</span><span class="p">.</span><span class="k">when</span><span class="p">(</span><span class="n">todoRepository</span><span class="p">.</span><span class="k">save</span><span class="p">(</span><span class="n">todo</span><span class="p">)).</span><span class="n">thenReturn</span><span class="p">(</span><span class="n">todo</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">MockHttpServletRequestBuilder</span><span class="w"> </span><span class="n">mockRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MockMvcRequestBuilders</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="ss">"/api/todos"</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">contentType</span><span class="p">(</span><span class="n">MediaType</span><span class="p">.</span><span class="n">APPLICATION_JSON</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">accept</span><span class="p">(</span><span class="n">MediaType</span><span class="p">.</span><span class="n">APPLICATION_JSON</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">content</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="n">mapper</span><span class="p">.</span><span class="n">writeValueAsString</span><span class="p">(</span><span class="n">todo</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">            </span><span class="o">//</span><span class="n">MvcResult</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">            </span><span class="n">mockMvc</span><span class="p">.</span><span class="n">perform</span><span class="p">(</span><span class="n">mockRequest</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="n">isCreated</span><span class="p">())</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">andExpect</span><span class="p">(</span><span class="n">jsonPath</span><span class="p">(</span><span class="ss">"$"</span><span class="p">,</span><span class="w"> </span><span class="n">notNullValue</span><span class="p">()))</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">andDo</span><span class="p">(</span><span class="k">print</span><span class="p">());</span><span class="w"></span>
+<span class="w">                    </span><span class="o">//</span><span class="p">.</span><span class="n">andReturn</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="o">//</span><span class="p">..</span><span class="n">autres</span><span class="w"> </span><span class="n">tests</span><span class="p">..</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+</pre></div></section>
+                      </div>
+                    <div class="articleComments">
+<!--                        <div class="note">-->
+<!--                          <p class="note-title">Note</p>-->
+<!--                          <p class="last">If you are using IronPython, use <code class="docutils literal"><span class="pre">IRONPYTHONPATH</span></code> instead of-->
+<!--                          <code class="docutils literal"><span class="pre">PYTHONPATH</span></code>.</p>-->
+<!--                        </div>-->
+                    </div>
+                  </div>
+                  <footer>
+                    <div id="id-current" style="display: none;">1</div>
+                    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+                      <a href="#" class="btn btn-neutral float-right" title="next" accesskey="n" rel="next"><span class="fa fa-arrow-circle-right"></span></a>
+                      <a href="#" class="btn btn-neutral" title="previous" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span></a>
+                    </div>
+                    <hr>
+                    <div role="contentinfo"><p><i class="far fa-copyright"></i> Copyright 2019-2021, MC. </p></div>
+                  </footer>
+                </div>
+      </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

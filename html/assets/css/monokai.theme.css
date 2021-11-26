@@ -31,7 +31,8 @@
 .codehilite .ne { color: #a6e22e } /* Name.Exception */
 .codehilite .nf { color: #a6e22e } /* Name.Function */
 .codehilite .nl { color: #f8f8f2 } /* Name.Label */
-.codehilite .nn { color: #f8f8f2 } /* Name.Namespace */
+/*.codehilite .nn { color: #f8f8f2 } !* Name.Namespace *!*/
+.codehilite .nn { color: #EC407A } /* Name.Namespace */
 .codehilite .nx { color: #a6e22e } /* Name.Other */
 .codehilite .py { color: #f8f8f2 } /* Name.Property */
 .codehilite .nt { color: #f92672 } /* Name.Tag */
